@@ -131,4 +131,4 @@ var argResult = arg.join(" ");
 	}
 });
 
-boto.login(config.token);
+boto.login(process.env.BOT_TOKEN);
