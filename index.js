@@ -163,11 +163,16 @@ boto.on('message', (message) => {
 			}
 			else
 			{
+				console.log("Ha entrado en la funcion");
 				opn("https://"+ argResult +".com");
+				console.log("Ha pasado");
 			}
 		}
 		if(argResult != "")
+		{
 			OpenUrl();
+			console.log("HA entrado");
+		}
 		else
 			message.author.send({embed});
 	}
