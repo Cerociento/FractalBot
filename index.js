@@ -1,3 +1,4 @@
+//V.09/03/2018
 const Discord = require('discord.js');
 const boto = new Discord.Client();
 const config = require("./config.json");
