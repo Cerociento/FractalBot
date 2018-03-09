@@ -181,4 +181,4 @@ boto.on('message', (message) => {
 	}
 });
 
-boto.login(config.token);
+boto.login(process.env.BOT_TOKEN);
