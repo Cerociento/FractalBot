@@ -3,53 +3,17 @@ const boto = new Discord.Client();
 const config = require("./config.json");
 const opn = require("opn");
 var prefix = config.prefix;
-const swearWords = ["apesta", "mierda", "polla"];
-var num = 0;
+const swearWords = ["mierda", "puta", "joder"];
+let arg;
+var argResult;
+var argAsunto;
+var argCorreos = "";
+const persona = new Discord.User();
 
-const embed = {
-  "color": 16711684,
-  "timestamp": "2018-03-07T05:17:24.179Z",
-  "footer": {
-    "text": "!ayuda"
-  },
-  "fields": [
-    {
-      "name": "Trello",
-      "value": "https://trello.com/fractalmindstudio",
-      "inline": true
-    },
-    {
-      "name": "Google Play",
-      "value": "https://play.google.com",
-      "inline": true
-    },
-    {
-      "name": "Google",
-      "value": "https://google.com",
-      "inline": true
-    },
-    {
-      "name": "Youtube",
-      "value": "https://youtube.com",
-      "inline": true
-    },
-    {
-      "name": "Gmail",
-      "value": "https://mail.google.com",
-      "inline": true
-    },
-    {
-      "name": "Jira",
-      "value": "http://fractalmindstudio.com:8180",
-      "inline": true
-    }
-  ]
-};
 	'use strict';
 	const nodemailer = require('nodemailer');
 	const xoauth2 = require("xoauth2");
 
-	//nodemailer.createTestAccount((err, account) => {
 			var transporter = nodemailer.createTransport({
 					service: "gmail",
 					auth:{
@@ -63,55 +27,135 @@ const embed = {
 						//})
 					}
 			})
-//	});
 
-
-boto.on('ready', () => {
-	console.log(`Logged in as ${boto.user.tag}!`);
+boto.on('ready', (User) => {
+	console.log(`Logged in as ${boto.user.username}!`);
+	boto.user.setActivity("!ayuda");
 	});
 	
 boto.on('message', (message) => {
 
-let arg = message.content.split(" ").slice(1);
-var argResult = arg.join(" ");
+	let arg = message.content.split(" ").slice(1);
+	var argResult = arg.join(" ");
 
 	if(swearWords.some(word => message.content.includes(word)) ) {
-		message.reply("Que maleducado, tendré que ir a matarte :yum:");
+		message.reply(argResult + "? Que maleducado, tendré que ir a matarte :yum:");
 	  }
 
 	if(!message.content.startsWith(config.prefix)) return;
 	if(message.author.bot) return;
 	
-	if(message.content == prefix + 'hola') {
-		message.author.send("hola");
-	}
-
-	if(message.content.startsWith(prefix + "mail"))	{
-		//message.reply(argResult);
-		var mailOptions = {
-			from: 'FractalBot <bototobdisc@gmail.com>',
-			to: 'Cerociento@vivaldi.net', 
-			subject: 'Hello', 
-			text: argResult, 
-		}
-
-		transporter.sendMail(mailOptions, function (error, info) {
-			if (error) 
+	if(message.content.startsWith(prefix + 'asunto'))	{
+			if(argResult != "")
 			{
-				 console.log(error);
+				argAsunto = arg.join(" ");
 			}
 			else
 			{
-				console.log("Mail enviado");
+			argAsunto = "Sin asunto";
 			}
-	})
 	}
 
-	if(message.content.startsWith(prefix + 'link'))	{    
-		//message.author.send({embed});
-
-		function OpenUrl()
+	if(message.content.startsWith(prefix + 'correo'))	{
+		if(argResult != "")
 		{
+			argCorreos = arg.join(" ");
+		}
+}
+
+	if(message.content.startsWith(prefix + "mail"))	{
+		//message.reply(argResult);
+
+		const embed = {
+			"author": {
+				"name": message.author.username,
+				"url": "https://mail.google.com",
+				"icon_url": message.author.avatarURL
+			},
+			"color": 16711684,
+			"timestamp": "2018-03-07T05:17:24.179Z",
+			"footer": {
+				"text": "!ayuda"
+			},
+			"title": "Asunto: " + argAsunto,
+			"description": "**Correos:** " + argCorreos + "\n\n" + argResult
+		};
+
+		if(argResult != "" && argCorreos != ""){
+			var mailOptions = {
+				from: 'FractalBot <bototobdisc@gmail.com>',
+				to: argCorreos, 
+				subject: argAsunto, 
+				text: argResult, 
+			}
+
+			transporter.sendMail(mailOptions, function (error, info) {
+				if (error) 
+				{
+						console.log(error);
+						message.author.send("No se ha mandado, error \n" + argResult);
+				}
+				else
+				{
+					console.log("Mail enviado");
+					message.author.send({embed});
+					argCorreos = "";
+					argAsunto = "";
+				}
+				})
+		}else if(argResult != "" && argCorreos == ""){
+			argResult = "No se ha mandado, no hay donde\n Cuerpo del mail: " + argResult;
+			message.author.send(argResult);
+		}else {
+			argResult = "No se ha mandado, mail vacío";
+			message.author.send(argResult);
+
+	  }
+	}
+
+	if(message.content.startsWith(prefix + 'link'))	{  
+		
+		const embed = {
+			"color": 16711684,
+			"timestamp": "2018-03-07T05:17:24.179Z",
+			"footer": {
+				"text": "!ayuda"
+			},
+			"fields": [
+				{
+					"name": "Trello",
+					"value": "https://trello.com/fractalmindstudio",
+					"inline": true
+				},
+				{
+					"name": "Google Play",
+					"value": "https://play.google.com",
+					"inline": true
+				},
+				{
+					"name": "Google",
+					"value": "https://google.com",
+					"inline": true
+				},
+				{
+					"name": "Youtube",
+					"value": "https://youtube.com",
+					"inline": true
+				},
+				{
+					"name": "Gmail",
+					"value": "https://mail.google.com",
+					"inline": true
+				},
+				{
+					"name": "Jira",
+					"value": "http://fractalmindstudio.com:8180",
+					"inline": true
+				}
+			]
+		};
+
+		function OpenUrl(){
 			if(argResult.indexOf(".com") != -1)
 			{
 				opn("https://"+ argResult);
@@ -123,12 +167,17 @@ var argResult = arg.join(" ");
 		}
 		if(argResult != "")
 			OpenUrl();
+		else
+			message.author.send({embed});
 	}
 
-	if(message.content.startsWith(prefix))
-	{
+	if(message.content.startsWith(prefix + ('ayuda'))){
+		message.author.send("**AYUDA**\n```!link : Mira los links preestablecidos\n!link + enlace de web : Te lleva a esa web directamente\n\n!correo + correos : Añade correos al que se manda (separar con comas)\n!asunto + El asunto que quieras (opcional) : Añade asunto para mail\n!mail + Cuerpo del mail: envia un mail```");
+	}
+
+	if(message.content.startsWith(prefix))	{
 		message.delete(message);
 	}
 });
 
-boto.login(process.env.BOT_TOKEN);
+boto.login(config.token);
