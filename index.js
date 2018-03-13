@@ -40,7 +40,7 @@ boto.on('message', (message) => {
 	var argResult = arg.join(" ");	
 
 	if(swearWords.some(word => message.content.includes(word)) ) {
-		var amenaza = Math.random() * 5;
+		var amenaza = Math.floor(Math.random() * 5);
 		
 		switch(amenaza)
 		{
