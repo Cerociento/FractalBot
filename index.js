@@ -38,9 +38,11 @@ boto.on('message', (message) => {
 
 	let arg = message.content.split(" ").slice(1);
 	var argResult = arg.join(" ");
+	var palabrota;
 
 	if(swearWords.some(word => message.content.includes(word)) ) {
-		message.reply(word + "? Que maleducado, tendré que ir a matarte :yum:");
+		palabrota = message.content.includes(word);
+		message.reply(palabrota + "? Que maleducado, tendré que ir a matarte :yum:");
 	  }
 
 	if(!message.content.startsWith(config.prefix)) return;
