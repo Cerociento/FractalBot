@@ -37,12 +37,30 @@ boto.on('ready', (User) => {
 boto.on('message', (message) => {
 
 	let arg = message.content.split(" ").slice(1);
-	var argResult = arg.join(" ");
-	var palabrota;
+	var argResult = arg.join(" ");	
 
 	if(swearWords.some(word => message.content.includes(word)) ) {
-		palabrota = message.content.includes(word);
-		message.reply(palabrota + "? Que maleducado, tendré que ir a matarte :yum:");
+		var amenaza = Math.random() * 5;
+		
+		switch(amenaza)
+		{
+			case 0:
+				message.reply("? Que maleducado, tendré que ir a matarte :yum:");
+				return;
+			case 1:
+				message.reply("? ¿Hablas en serio? Poco has probado el jabón :unamused:");
+				return;
+			case 2:
+				message.reply("? ¡¡Eso lo serás tu!! :muscle: :muscle:");
+				return;
+			case 3:
+				message.reply("? Si sigues con esas, tendré que ir a matarte :yum:");
+				return;
+			case 4:
+				message.reply("? Que maleducado, tendré que ir a visitar a tu familia :smiling_imp:");
+				return;
+				
+		}				
 	  }
 
 	if(!message.content.startsWith(config.prefix)) return;
