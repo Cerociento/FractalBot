@@ -40,7 +40,7 @@ boto.on('message', (message) => {
 	var argResult = arg.join(" ");
 
 	if(swearWords.some(word => message.content.includes(word)) ) {
-		message.reply(argResult + "? Que maleducado, tendré que ir a matarte :yum:");
+		message.reply(word + "? Que maleducado, tendré que ir a matarte :yum:");
 	  }
 
 	if(!message.content.startsWith(config.prefix)) return;
