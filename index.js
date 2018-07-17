@@ -4,7 +4,7 @@ const boto = new Discord.Client();
 const config = require("./config.json");
 const opn = require("opn");
 var prefix = config.prefix;
-const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas"];
+const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas", "shenmue", "Shenmue"];
 let arg;
 var argResult;
 var argAsunto;
@@ -145,7 +145,7 @@ boto.on('message', (message) => {
 			"fields": [
 				{
 					"name": "Trello",
-					"value": "https://trello.com/fractalmindstudio",
+					"value": "https://trello.com/theunnamedcompanyjam",
 					"inline": true
 				},
 				{
@@ -167,12 +167,12 @@ boto.on('message', (message) => {
 					"name": "Gmail",
 					"value": "https://mail.google.com",
 					"inline": true
-				},
+				}/*,
 				{
 					"name": "Jira",
 					"value": "http://fractalmindstudio.com:8180",
 					"inline": true
-				}
+				}*/
 			]
 		};
 
