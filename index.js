@@ -36,16 +36,16 @@ boto.on('ready', (User) => {
 	});
 
 
-boto.on('message', (shenMessage) => {
+boto.on('message', (shenMessage) => {			
+	
+	let arg = shenMessage.content.split(" ").slice(1);
+	var argResult = arg.join(" ");	
 	
 	if (shenMessage.content === 'join') {
     // Only try to join the sender's voice channel if they are in one themselves
     join_voice_chanel(420385279765905420);
   }
 	
-	
-	let arg = shenMessage.content.split(" ").slice(1);
-	var argResult = arg.join(" ");	
 	
 		if(shenmueCaca.some(wordMal => shenMessage.content.includes(wordMal)) ) {
 		var shen = Math.floor(Math.random() * 4);
