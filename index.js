@@ -47,16 +47,16 @@ boto.on('message', (shenMessage) => {
 		switch(shen)
 		{
 			case 0:
-				shenMessage.reply("Ese 'juego' innombrable es mierdoso :yum:");
+				shenMessage.reply("/tts Ese 'juego' innombrable es mierdoso :yum:");
 				return;
 			case 1:
-				shenMessage.reply("Está claro que es una basura :unamused:");
+				shenMessage.reply("/tts Está claro que es una basura :unamused:");
 				return;
 			case 2:
-				shenMessage.reply("Esto mola más que ese 'juego' :poop:");
+				shenMessage.reply("/tts Esto mola más que ese 'juego' :poop:");
 				return;
 			case 3:
-				shenMessage.reply("Si sigues nombrando a ese 'juego', tendré que ir a matarte :yum:");
+				shenMessage.reply("/tts Si sigues nombrando a ese 'juego', tendré que ir a matarte :yum:");
 				return;							
 		}				
 	  }
@@ -229,7 +229,7 @@ boto.on('message', (message) => {
 	}
 
 	if(message.content.startsWith(prefix + ('ayuda'))){
-		message.author.send("**AYUDA**\n```!link : Mira los links preestablecidos\n\n!correo + correos : Añade correos al que se manda (separar con comas)\n!asunto + El asunto que quieras (opcional) : Añade asunto para mail\n!mail + Cuerpo del mail: envia un mail```" + swearWords);
+		message.author.send("**AYUDA**\n```!link : Mira los links preestablecidos\n\n!correo + correos : Añade correos al que se manda (separar con comas)\n!asunto + El asunto que quieras (opcional) : Añade asunto para mail\n!mail + Cuerpo del mail: envia un mail```");
 	}
 
 	if(message.content.startsWith(prefix))	{
