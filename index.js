@@ -47,16 +47,16 @@ boto.on('message', (shenMessage) => {
 		switch(shen)
 		{
 			case 0:
-				shenMessage.reply("/tts Ese 'juego' innombrable es mierdoso :yum:");
+				shenMessage.reply("Ese 'juego' innombrable es mierdoso :yum:");
 				return;
 			case 1:
-				shenMessage.reply("/tts Está claro que es una basura :unamused:");
+				shenMessage.reply("Está claro que es una basura :unamused:");
 				return;
 			case 2:
-				shenMessage.reply("/tts Esto mola más que ese 'juego' :poop:");
+				shenMessage.reply("Esto mola más que ese 'juego' :poop:");
 				return;
 			case 3:
-				shenMessage.reply("/tts Si sigues nombrando a ese 'juego', tendré que ir a matarte :yum:");
+				shenMessage.reply("Si sigues nombrando a ese 'juego', tendré que ir a matarte :yum:");
 				return;							
 		}				
 	  }
