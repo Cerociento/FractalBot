@@ -38,10 +38,13 @@ boto.on('ready', (User) => {
 
 boto.on('message', (shenMessage) => {
 	
-	if(shenMessage.content == 'join') {
-    video.pipe(fs.createWriteStream('current.mp3'));
-        bot.reply('joined');
-        bot.joinVoiceChannel('174428230890160129');
+	if (shenMessage.content === '/join') {
+    // Only try to join the sender's voice channel if they are in one themselves
+    if (shenMessage.member.voiceChannel) {
+      const connection = await shenMessage.member.voiceChannel.join();
+    } else {
+      shenMessage.reply('You need to join a voice channel first!');
+    }
   }
 	
 	
