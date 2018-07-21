@@ -5,7 +5,7 @@ const config = require("./config.json");
 const opn = require("opn");
 var prefix = config.prefix;
 const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas"];
-const shenmueCaca = ["g", "G"];
+const shenmueCaca = ["shenmue", "Shenmue"];
 let arg;
 var argResult;
 var argAsunto;
@@ -42,26 +42,22 @@ boto.on('message', (shenMessage) => {
 	var argResult = arg.join(" ");	
 	
 		if(shenmueCaca.some(wordMal => shenMessage.content.includes(wordMal)) ) {
-		var shen = Math.floor(Math.random() * 5);
+		var shen = Math.floor(Math.random() * 4);
 		
 		switch(shen)
 		{
 			case 0:
-				shenMessage.reply("Shenmue es caca :yum:");
+				shenMessage.reply("Ese juego innombrable es caca :yum:");
 				return;
 			case 1:
-				shenMessage.reply("Está claro que Shenmue es una basura :unamused:");
+				shenMessage.reply("Está claro que es una basura :unamused:");
 				return;
 			case 2:
-				shenMessage.reply("Esto mola más que Shenmue :nave:");
+				shenMessage.reply("Esto mola más que Shenmue :poop:");
 				return;
 			case 3:
-				shenMessage.reply("Si sigues nombrando a Shenmue, tendré que ir a matarte :yum:");
-				return;
-			case 4:
-				shenMessage.reply("Tú si que eres Shenmue :point_right:");
-				return;
-				
+				shenMessage.reply("Si sigues nombrando a ese '''juego''', tendré que ir a matarte :yum:");
+				return;							
 		}				
 	  }
 	if(!shenMessage.content.startsWith(config.prefix)) return;
