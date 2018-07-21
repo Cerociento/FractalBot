@@ -71,10 +71,10 @@ boto.on('message', (message) => {
 		switch(shen)
 		{
 			case 0:
-				message.reply("Shenmue es una mierda :yum:");
+				message.reply("Shenmue es caca :yum:");
 				return;
 			case 1:
-				message.reply("Está claro que Shenmue es una mierda :unamused:");
+				message.reply("Está claro que Shenmue es una basura :unamused:");
 				return;
 			case 2:
 				message.reply("Esto mola más que Shenmue :nave:");
