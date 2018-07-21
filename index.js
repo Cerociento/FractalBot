@@ -40,12 +40,14 @@ boto.on('message', (shenMessage) => {
 	
 	let arg = shenMessage.content.split(" ").slice(1);
 	var argResult = arg.join(" ");	
+	let channel = boto.channels.get('420385279765905420');
+	
 	
 	if (shenMessage.content === 'join') {
-    // Only try to join the sender's voice channel if they are in one themselves
-		shenMessage.reply("Lo he intentado...");
-    join_voice_chanel(420385279765905420);
-  }
+		channel = client.channels.find('name', 'General');
+  		channel.join().then(connection => console.log('Connected')).catch(console.error);
+   
+	}
 	
 	
 		if(shenmueCaca.some(wordMal => shenMessage.content.includes(wordMal)) ) {
