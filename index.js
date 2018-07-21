@@ -5,7 +5,7 @@ const config = require("./config.json");
 const opn = require("opn");
 var prefix = config.prefix;
 const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas"];
-const shenmueCaca = ["g", "g"];
+const shenmueCaca = ["g", "G"];
 let arg;
 var argResult;
 var argAsunto;
