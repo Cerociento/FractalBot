@@ -34,6 +34,39 @@ boto.on('ready', (User) => {
 	console.log(`Logged in as ${boto.user.username}!`);
 	boto.user.setActivity("!ayuda");
 	});
+
+
+boto.on('message', (shenMessage) => {
+	
+	let arg = shenMessage.content.split(" ").slice(1);
+	var argResult = arg.join(" ");	
+	
+		if(shenmueCaca.some(wordMal => shenMessage.content.includes(wordMal)) ) {
+		var shen = Math.floor(Math.random() * 5);
+		
+		switch(shen)
+		{
+			case 0:
+				shenMessage.reply("Shenmue es caca :yum:");
+				return;
+			case 1:
+				shenMessage.reply("Está claro que Shenmue es una basura :unamused:");
+				return;
+			case 2:
+				shenMessage.reply("Esto mola más que Shenmue :nave:");
+				return;
+			case 3:
+				shenMessage.reply("Si sigues nombrando a Shenmue, tendré que ir a matarte :yum:");
+				return;
+			case 4:
+				shenMessage.reply("Tú si que eres Shenmue :point_right:");
+				return;
+				
+		}				
+	  }
+	if(!shenMessage.content.startsWith(config.prefix)) return;
+	if(shenMessage.author.bot) return;
+	});
 	
 boto.on('message', (message) => {
 
@@ -64,32 +97,6 @@ boto.on('message', (message) => {
 		}				
 	  }
 	
-	if(!message.content.startsWith(config.prefix)) return;
-	//if(message.author.bot) return;
-	
-	if(shenmueCaca.some(wordMal => message.content.includes(wordMal)) ) {
-		var shen = Math.floor(Math.random() * 5);
-		
-		switch(shen)
-		{
-			case 0:
-				message.reply("Shenmue es caca :yum:");
-				return;
-			case 1:
-				message.reply("Está claro que Shenmue es una basura :unamused:");
-				return;
-			case 2:
-				message.reply("Esto mola más que Shenmue :nave:");
-				return;
-			case 3:
-				message.reply("Si sigues nombrando a Shenmue, tendré que ir a matarte :yum:");
-				return;
-			case 4:
-				message.reply("Tú si que eres Shenmue :point_right:");
-				return;
-				
-		}				
-	  }
 	if(!message.content.startsWith(config.prefix)) return;
 	if(message.author.bot) return;
 	
