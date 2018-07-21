@@ -224,7 +224,7 @@ boto.on('message', (message) => {
 	}
 
 	if(message.content.startsWith(prefix + ('ayuda'))){
-		message.author.send("**AYUDA**\n```!link : Mira los links preestablecidos\n\n!correo + correos : Añade correos al que se manda (separar con comas)\n!asunto + El asunto que quieras (opcional) : Añade asunto para mail\n!mail + Cuerpo del mail: envia un mail```");
+		message.author.send("**AYUDA**\n```!link : Mira los links preestablecidos\n\n!correo + correos : Añade correos al que se manda (separar con comas)\n!asunto + El asunto que quieras (opcional) : Añade asunto para mail\n!mail + Cuerpo del mail: envia un mail```" + swearWords);
 	}
 
 	if(message.content.startsWith(prefix))	{
