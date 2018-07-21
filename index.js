@@ -33,6 +33,15 @@ const persona = new Discord.User();
 boto.on('ready', (User) => {
 	console.log(`Logged in as ${boto.user.username}!`);
 	boto.user.setActivity("!ayuda");
+	
+	channel.join().then(connection => {
+    // Yay, it worked!
+    console.log("Successfully connected.");
+  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    console.error(e);
+  });
+	
 	});
 
 
@@ -44,9 +53,7 @@ boto.on('message', (shenMessage) => {
 	
 	
 	if (shenMessage.content === 'join') {
-		channel = client.channels.find('name', 'General');
-  		channel.join().then(connection => console.log('Connected')).catch(console.error);
-   
+		channel.join().then(connection => console.log('Connected')).catch(console.error);  
 	}
 	
 	
