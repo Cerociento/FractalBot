@@ -38,6 +38,13 @@ boto.on('ready', (User) => {
 
 boto.on('message', (shenMessage) => {
 	
+	if(shenMessage.content == 'join') {
+    video.pipe(fs.createWriteStream('current.mp3'));
+        bot.reply('joined');
+        bot.joinVoiceChannel('174428230890160129');
+  }
+	
+	
 	let arg = shenMessage.content.split(" ").slice(1);
 	var argResult = arg.join(" ");	
 	
