@@ -43,6 +43,7 @@ boto.on('message', (shenMessage) => {
 	
 	if (shenMessage.content === 'join') {
     // Only try to join the sender's voice channel if they are in one themselves
+		shenMessage.reply("Lo he intentado...");
     join_voice_chanel(420385279765905420);
   }
 	
