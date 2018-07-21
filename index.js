@@ -64,10 +64,11 @@ boto.on('message', (message) => {
 		}				
 	  }
 	
-	if(shenmueCaca.some(word => message.content.includes(word)) ) {
-		var amenaza = Math.floor(Math.random() * 5);
+	
+	if(shenmueCaca.some(wordMal => message.content.includes(wordMal)) ) {
+		var shen = Math.floor(Math.random() * 5);
 		
-		switch(amenaza)
+		switch(shen)
 		{
 			case 0:
 				message.reply("Shenmue es una mierda :yum:");
