@@ -4,7 +4,8 @@ const boto = new Discord.Client();
 const config = require("./config.json");
 const opn = require("opn");
 var prefix = config.prefix;
-const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas", "shenmue", "Shenmue"];
+const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas"];
+const shenmueCaca = ["shenmue", "Shenmue"];
 let arg;
 var argResult;
 var argAsunto;
@@ -58,6 +59,30 @@ boto.on('message', (message) => {
 				return;
 			case 4:
 				message.reply("? Que maleducado, tendré que ir a visitar a tu familia :smiling_imp:");
+				return;
+				
+		}				
+	  }
+	
+	if(shenmueCaca.some(word => message.content.includes(word)) ) {
+		var amenaza = Math.floor(Math.random() * 5);
+		
+		switch(amenaza)
+		{
+			case 0:
+				message.reply("Shenmue es una mierda :yum:");
+				return;
+			case 1:
+				message.reply("Está claro que Shenmue es una mierda :unamused:");
+				return;
+			case 2:
+				message.reply("Esto mola más que Shenmue :nave:");
+				return;
+			case 3:
+				message.reply("Si sigues nombrando a Shenmue, tendré que ir a matarte :yum:");
+				return;
+			case 4:
+				message.reply("Tú si que eres Shenmue :point_right:");
 				return;
 				
 		}				
