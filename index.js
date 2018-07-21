@@ -1,4 +1,4 @@
-//V.09/03/2018
+//V.21/07/2018
 const Discord = require('discord.js');
 const boto = new Discord.Client();
 const config = require("./config.json");
@@ -47,16 +47,16 @@ boto.on('message', (shenMessage) => {
 		switch(shen)
 		{
 			case 0:
-				shenMessage.reply("Ese juego innombrable es caca :yum:");
+				shenMessage.reply("Ese 'juego' innombrable es mierdoso :yum:");
 				return;
 			case 1:
 				shenMessage.reply("Está claro que es una basura :unamused:");
 				return;
 			case 2:
-				shenMessage.reply("Esto mola más que Shenmue :poop:");
+				shenMessage.reply("Esto mola más que ese 'juego' :poop:");
 				return;
 			case 3:
-				shenMessage.reply("Si sigues nombrando a ese '''juego''', tendré que ir a matarte :yum:");
+				shenMessage.reply("Si sigues nombrando a ese 'juego', tendré que ir a matarte :yum:");
 				return;							
 		}				
 	  }
