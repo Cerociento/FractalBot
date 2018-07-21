@@ -64,6 +64,8 @@ boto.on('message', (message) => {
 		}				
 	  }
 	
+	if(!message.content.startsWith(config.prefix)) return;
+	if(message.author.bot) return;
 	
 	if(shenmueCaca.some(wordMal => message.content.includes(wordMal)) ) {
 		var shen = Math.floor(Math.random() * 5);
@@ -88,9 +90,9 @@ boto.on('message', (message) => {
 				
 		}				
 	  }
-
 	if(!message.content.startsWith(config.prefix)) return;
 	if(message.author.bot) return;
+	
 	
 	if(message.content.startsWith(prefix + 'asunto'))	{
 			if(argResult != "")
