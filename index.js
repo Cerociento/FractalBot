@@ -33,9 +33,9 @@ const persona = new Discord.User();
 boto.on('ready', (User) => {
 	console.log(`Logged in as ${boto.user.username}!`);
 	boto.user.setActivity("!ayuda");
-	/*let channel = boto.channels.get('420385279765905420');
+	let channel = boto.channels.get('420385279765905420');
 	
-	channel.join().then(connection => {
+	/*channel.join().then(connection => {
     // Yay, it worked!
     console.log("Successfully connected.");
   }).catch(e => {
