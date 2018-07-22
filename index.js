@@ -40,7 +40,7 @@ boto.on('ready', (User) => {
     console.log("Successfully connected.");
   }).catch(e => {
     // Oh no, it errored! Let's log it to console :)
-    console.error("bua bua bua....");
+    console.error(e);
   });
 	
 	});
