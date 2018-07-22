@@ -35,13 +35,13 @@ boto.on('ready', (User) => {
 	boto.user.setActivity("!ayuda");
 	let channel = boto.channels.get('420385279765905420');
 	
-	/*channel.join().then(connection => {
+	channel.join().then(connection => {
     // Yay, it worked!
     console.log("Successfully connected.");
   }).catch(e => {
     // Oh no, it errored! Let's log it to console :)
-    console.error(e);
-  });*/
+    console.error("bua bua bua....");
+  });
 	
 	});
 
