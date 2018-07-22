@@ -4,7 +4,7 @@ const boto = new Discord.Client();
 const config = require("./config.json");
 const opn = require("opn");
 var prefix = config.prefix;
-const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas"];
+const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas", "gilipolla", "Gilipolla"];
 const shenmueCaca = ["shenmue", "Shenmue"];
 let arg;
 var argResult;
