@@ -22,10 +22,10 @@ const persona = new Discord.User();
 						//xoauth2: xoauth2.createXOAuth2Generator({
 							type: "Oauth2",
 							user: "bototobdisc@gmail.com",
-							clientId: "1000279861578-vfrlms81ojqffeumjnp111h2bejnd8kf.apps.googleusercontent.com",
-							clientSecret: "YyRyDYKmXzMN2nMZnSfuOFh9",
-							refreshToken: "1/WbVOpJLMSSY696xefGPknGiAj1vS8PW3RNJth-zxw4o",
-							accessToken: "ya29.Glt3BaopLZ6uGoj2wkRA4P3oFZzqkIsUScHWiD_9eRoRkouVck4oGZJf3I551GNwHoeNgEsxqq3lVg8fyMvsMMtvCcB71HcnnWzK9PuvLN3Na8xB8viHriZVtlbW"
+							clientId: "496229120530-f6s8e76lrnltt7pe13g5s2mp2njdgrea.apps.googleusercontent.com",
+							clientSecret: "rM2RnVOB8KUdZuzqRKxla9v9",
+							refreshToken: "1/SLEgkJ7kXbPVW03D-Zh-KRGUEoWBmLAtJckSVn3Kc8w",
+							accessToken: "ya29.GltUBnx9MTY6GyRAswDSjv_mpXVoS6XKLhwaSK84RfyKNzxqqcRiX_1n71iD4GQ2gAPTa03UQdpC24Yc7cAL5Hcw_py2NPP25NLxH3i0JV4eNO7k6LUW6fzuAdjg"
 						//})
 					}
 			})
