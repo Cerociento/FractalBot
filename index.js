@@ -21,7 +21,7 @@ const persona = new Discord.User();
 					auth:{
 						//xoauth2: xoauth2.createXOAuth2Generator({
 							type: "Oauth2",
-							user: "bototobdisc@gmail.com",
+							user: "parallaxstudiogames@gmail.com",
 							clientId: "496229120530-f6s8e76lrnltt7pe13g5s2mp2njdgrea.apps.googleusercontent.com",
 							clientSecret: "rM2RnVOB8KUdZuzqRKxla9v9",
 							refreshToken: "1/SLEgkJ7kXbPVW03D-Zh-KRGUEoWBmLAtJckSVn3Kc8w",
