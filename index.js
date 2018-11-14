@@ -152,7 +152,7 @@ boto.on('message', (message) => {
 
 		if(argResult != "" && argCorreos != ""){
 			var mailOptions = {
-				from: 'FractalBot <bototobdisc@gmail.com>',
+				from: 'Parallax Games <parallaxstudiogames@gmail.com>',
 				to: argCorreos, 
 				subject: argAsunto, 
 				text: argResult, 
