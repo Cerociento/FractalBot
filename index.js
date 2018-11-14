@@ -193,7 +193,7 @@ boto.on('message', (message) => {
 			"fields": [
 				{
 					"name": "Trello",
-					"value": "https://trello.com/theunnamedcompanyjam",
+					"value": "https://trello.com/parallaxgames",
 					"inline": true
 				},
 				{
