@@ -162,7 +162,7 @@ boto.on('message', (message) => {
 				if (error) 
 				{
 						console.log(error);
-						message.author.send("No se ha mandado, error \n" + argResult);
+						message.author.send("No se ha enviado, error \n" + argResult);
 				}
 				else
 				{
