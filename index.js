@@ -125,6 +125,7 @@ boto.on('message', (message) => {
 			{
 				message.reply(argResult);
 			}
+			message.reply(fecha.getDate());
 		}
 	}
 	
