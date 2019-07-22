@@ -7,6 +7,8 @@ var prefix = config.prefix;
 const swearWords = ["mierda", "puta", "joder", "gilipollas", "Mierda", "Puta", "Joder", "Gilipollas", "gilipolla", "Gilipolla"];
 const shenmueCaca = ["shenmue", "Shenmue"];
 let arg;
+var dia;
+var fecha = new Date();
 var argResult;
 var argAsunto;
 var argCorreos = "";
@@ -34,6 +36,11 @@ boto.on('ready', (User) => {
 	console.log(`Logged in as ${boto.user.username}!`);
 	boto.user.setActivity("!ayuda");
 	let channel = boto.channels.get('420385279765905420');
+	
+	if(dia == fecha.getDate())
+	{
+		boto.user.setActivity("!ayudando");
+	}
 	
 	/*channel.join().then(connection => {
     // Yay, it worked!
@@ -113,6 +120,14 @@ boto.on('message', (message) => {
 	if(!message.content.startsWith(config.prefix)) return;
 	if(message.author.bot) return;
 	
+	
+	if(message.content.startsWith(prefix + 'fecha'))
+	{
+		if(argResult != "")
+		{
+			fecha = arg.join(" "); 
+		}
+	}
 	
 	if(message.content.startsWith(prefix + 'asunto'))	{
 			if(argResult != "")
