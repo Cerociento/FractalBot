@@ -35,12 +35,7 @@ const persona = new Discord.User();
 boto.on('ready', (User) => {
 	console.log(`Logged in as ${boto.user.username}!`);
 	boto.user.setActivity("!ayuda");
-	let channel = boto.channels.get('420385279765905420');
-	
-	if(dia == fecha.getDate())
-	{
-		boto.user.setActivity("!ayudando");
-	}
+	let channel = boto.channels.get('420385279765905420');	
 	
 	/*channel.join().then(connection => {
     // Yay, it worked!
@@ -126,6 +121,10 @@ boto.on('message', (message) => {
 		if(argResult != "")
 		{
 			fecha = arg.join(" "); 
+			if(dia == fecha.getDate())
+			{
+				message.reply(argResult);
+			}
 		}
 	}
 	
@@ -261,7 +260,7 @@ boto.on('message', (message) => {
 	}
 
 	if(message.content.startsWith(prefix + ('ayuda'))){
-		message.author.send("**AYUDA**\n```!link : Mira los links preestablecidos\n\n!correo + correos : Añade correos al que se manda (separar con comas)\n!asunto + El asunto que quieras (opcional) : Añade asunto para mail\n!mail + Cuerpo del mail: envia un mail```");
+		message.author.send("**AYUDA**\n```!link : Mira los links preestablecidos\n\n!correo + correos : Añade correos al que se manda (separar con comas)\n!asunto + El asunto que quieras (opcional) : Añade asunto para mail\n!mail + Cuerpo del mail: envia un mail\n!fecha + Numero de día: Añade dia de alarma```");
 	}
 
 	if(message.content.startsWith(prefix))	{
